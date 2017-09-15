@@ -21,7 +21,7 @@ function submit(options){
           }catch(e){
             reject(new Error(resp.statusCode + ': ' + resp.body));
           }
-        }else if(resp.statusCode === 204){
+        }else if(resp.statusCode === 204 || resp.statusCode === 201){
           resolve(resp.body);
         }else{
           reject(new Error(resp.statusCode + ': ' + resp.body));
